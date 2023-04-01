@@ -3,7 +3,7 @@ In this article, you will learn how to reset the forgotten root password on Ubun
 Firstly, you need to either power on or reboot your Ubuntu system. You should get a grub menu as shown below. If you are running your system on VirtualBox, press the ‘SHIFT’ key on the keyboard to bring up the boot menu.
 
 + Ubuntu Grub Menu
-![Ubuntu Grub menu](/pictures/ubuntu/ubuntu_gub.png)
+![Ubuntu Grub menu](/pictures/ubuntu/ubuntu_grub.png)
 Next, press the 'e' key to edit the grub parameters. This should display a screen as shown below.
 
 + Grub Boot Parameters
@@ -43,26 +43,26 @@ With the root password successfully changed, reboot into your Ubuntu system by r
 ----------------------------------------------------------------------------------------------------------------------------------------
 ## Comment réinitialiser le mot de passe root oublié dans Ubuntu
 Dans cet article, vous apprendrez comment réinitialiser le mot de passe root oublié sur Ubuntu 18.04 LTS et Ubuntu 20.04 LTS.
-Tout d’abord, vous devez allumer ou redémarrer votre système Ubuntu. Vous devriez obtenir un menu de grub comme indiqué ci-dessous. Si vous exécutez votre système sur VirtualBox, appuyez sur la touche 'SHIFT' du clavier pour afficher le menu de démarrage.
+Tout d’abord, vous devez allumer ou redémarrer votre système Ubuntu. Vous devriez obtenir un menu de grub comme indiqué ci-dessous. Si vous exécutez votre système sur VirtualBox, appuyez sur la touche 'SHIFT' du clavier pour afficher le menu de démarrage.\
 
-+ Menu Ubuntu Grub
-! [Menu Ubuntu Grub](/pictures/ubuntu/ubuntu_gub.png)
-Ensuite, appuyez sur la touche 'e' pour modifier les paramètres grub. Cela devrait afficher un écran comme indiqué ci-dessous.
++ Menu Ubuntu Grub\
+![Menu Ubuntu Grub](/pictures/ubuntu/ubuntu_grub.png)\
+Ensuite, appuyez sur la touche 'e' pour modifier les paramètres grub. Cela devrait afficher un écran comme indiqué ci-dessous.\
 
-+ Paramètres de démarrage Grub
-! [Grub ubuntu](/pictures/ubuntu/grub_boot.png)
-Faites défiler vers le bas jusqu’à ce que vous arriviez à la ligne qui commence par 'linux /boot/vmlinuz', la ligne entière est mise en surbrillance ci-dessous.
++ Paramètres de démarrage Grub\
+![Grub ubuntu](/pictures/ubuntu/grub_boot.png)
+Faites défiler vers le bas jusqu’à ce que vous arriviez à la ligne qui commence par 'linux /boot/vmlinuz', la ligne entière est mise en surbrillance ci-dessous.\
 
 + Trouver le paramètre de démarrage Grub
-! [Grub ubuntu](/pictures/ubuntu/grub_boot_1.png)
+![Grub ubuntu](/pictures/ubuntu/grub_boot_1.png)
 Réduisez à une section qui se lit « ro quiet splash $vt_handoff ».
 
-+ Localiser le paramètre de démarrage Grub
-! [Grub ubuntu](/pictures/ubuntu/grub_boot_2.png)
-Remplacez « ro quiet splash $vt_handoff » par rw init=/bin/bash comme indiqué. L’objectif est de définir le système de fichiers racine avec des commandes de lecture et d’écriture indiquées par le préfixe rw.
++ Localiser le paramètre de démarrage Grub\
+![Grub ubuntu](/pictures/ubuntu/grub_boot_2.png)\
+Remplacez « ro quiet splash $vt_handoff » par rw init=/bin/bash comme indiqué. L’objectif est de définir le système de fichiers racine avec des commandes de lecture et d’écriture indiquées par le préfixe rw.\
 
-+ Activer le système de fichiers racine
-! [Grub ubuntu](/pictures/ubuntu/grub_boot_3.png)
++ Activer le système de fichiers racine\
+![Grub ubuntu](/pictures/ubuntu/grub_boot_3.png)\
 Ensuite, appuyez sur ctrl + x ou F10 pour redémarrer votre système. Votre système démarrera dans un écran de shell racine comme indiqué ci-dessous. Vous pouvez confirmer que le système de fichiers racine disposait de droits d’accès en lecture et en écriture en exécutant la commande.
 '''bash
 # montage | grep -w /
@@ -78,7 +78,7 @@ Pour réinitialiser le mot de passe root, exécutez la commande.
 Fournissez un nouveau mot de passe et confirmez-le. Par la suite, vous recevrez une notification « mot de passe mis à jour avec succès ».
 
 + Réinitialiser le mot de passe root dans Ubuntu
-! [Réinitialiser le mot de passe](/pictures/ubuntu/change_password.png)
+![Réinitialiser le mot de passe](/pictures/ubuntu/change_password.png)
 Une fois le mot de passe root modifié avec succès, redémarrez dans votre système Ubuntu en exécutant la commande.
 '''bash
 # exec /sbin/init
